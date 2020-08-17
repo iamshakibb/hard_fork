@@ -82,6 +82,7 @@ function callApiForSearch(nameOfArtistOrSong) {
                                             <h2 class="text-success text-center mb-4">${albumTitle}</h2>
                                             <pre class="text-white text-center">${lyrics}</pre>
                                           </div>`;
+                showLyricByClick();
               } else if (lyrics === undefined) {
                 searchResult.innerHTML += `<div class="single-result row align-items-center my-3 p-3">
                                               <div class="music_img col-md-3 col-sm-12 text-center">
