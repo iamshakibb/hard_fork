@@ -77,7 +77,7 @@ function callApiForSearch(nameOfArtistOrSong) {
                                                   <h3 class="lyrics-name">${albumTitle}</h3>
                                                   <p class="author lead">Album by <span>${artistName}</span></p>
                                                   <audio controls controlsList="nodownload">
-                                                      <source src=${proxy}${songPreview} type="audio/mpeg" />
+                                                      <source src=${songPreview} type="audio/mpeg" />
                                                   </audio>
                                               </div>
                                               <div class="col-md-3 col-sm-12 text-md-right text-sm-center text-center">
