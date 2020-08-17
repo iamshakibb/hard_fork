@@ -56,7 +56,6 @@ function callApiForSearch(nameOfArtistOrSong) {
           let albumImg = nameOfArtistOrSong.data[i].album.cover_medium;
           let albumTitle = nameOfArtistOrSong.data[i].title;
           let artistName = nameOfArtistOrSong.data[i].artist.name;
-          let songPreview = nameOfArtistOrSong.data[i].preview;
 
           lyricsApiUrl = `https://api.lyrics.ovh/v1/${artistName}/${albumTitle}`;
           fetch(lyricsApiUrl)
@@ -74,9 +73,6 @@ function callApiForSearch(nameOfArtistOrSong) {
                                               <div class="col-md-6 col-sm-12 text-center">
                                                   <h3 class="lyrics-name">${albumTitle}</h3>
                                                   <p class="author lead">Album by <span>${artistName}</span></p>
-                                                  <audio controls controlsList="nodownload">
-                                                      <source src=${songPreview} type="audio/mpeg" />
-                                                  </audio>
                                               </div>
                                               <div class="col-md-3 col-sm-12 text-md-right text-sm-center text-center">
                                                   <button class="btn btn-success get_lyrics_btn">Get Lyrics</button>
@@ -94,9 +90,6 @@ function callApiForSearch(nameOfArtistOrSong) {
                                               <div class="col-md-6 col-sm-12 text-center">
                                                   <h3 class="lyrics-name">${albumTitle}</h3>
                                                   <p class="author lead">Album by <span>${artistName}</span></p>
-                                                  <audio controls controlsList="nodownload">
-                                                      <source src=${songPreview} type="audio/mpeg" />
-                                                  </audio>
                                               </div>
                                               <div class="col-md-3 col-sm-12 text-md-right text-sm-center text-center">
                                                   <button class="btn btn-success get_lyrics_btn">Get Lyrics</button>
