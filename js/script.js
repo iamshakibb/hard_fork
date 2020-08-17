@@ -56,8 +56,6 @@ function callApiForSearch(nameOfArtistOrSong) {
           let albumImg = nameOfArtistOrSong.data[i].album.cover_medium;
           let albumTitle = nameOfArtistOrSong.data[i].title;
           let artistName = nameOfArtistOrSong.data[i].artist.name;
-          // let proxy = `https://cors-anywhere.herokuapp.com/`;
-          let songPreview = nameOfArtistOrSong.data[i].preview;
 
           lyricsApiUrl = `https://api.lyrics.ovh/v1/${artistName}/${albumTitle}`;
           fetch(lyricsApiUrl)
@@ -66,7 +64,6 @@ function callApiForSearch(nameOfArtistOrSong) {
               return data;
             })
             .then((data) => {
-              console.log(songPreview);
               let lyrics = data.lyrics;
               if (lyrics !== undefined) {
                 searchResult.innerHTML += `<div class="single-result row align-items-center my-3 p-3">
@@ -76,9 +73,6 @@ function callApiForSearch(nameOfArtistOrSong) {
                                               <div class="col-md-6 col-sm-12 text-center">
                                                   <h3 class="lyrics-name">${albumTitle}</h3>
                                                   <p class="author lead">Album by <span>${artistName}</span></p>
-                                                  <audio controls controlsList="nodownload">
-                                                      <source src='http://cdn-preview-1.deezer.com/stream/c-1ad117a5accc2ee7138046ba4473e1b5-6.mp3' type="audio/mpeg" />
-                                                  </audio>
                                               </div>
                                               <div class="col-md-3 col-sm-12 text-md-right text-sm-center text-center">
                                                   <button class="btn btn-success get_lyrics_btn">Get Lyrics</button>
@@ -96,9 +90,6 @@ function callApiForSearch(nameOfArtistOrSong) {
                                               <div class="col-md-6 col-sm-12 text-center">
                                                   <h3 class="lyrics-name">${albumTitle}</h3>
                                                   <p class="author lead">Album by <span>${artistName}</span></p>
-                                                  <audio controls controlsList="nodownload">
-                                                      <source src='http://cdn-preview-1.deezer.com/stream/c-1ad117a5accc2ee7138046ba4473e1b5-6.mp3' type="audio/mpeg" />
-                                                  </audio>
                                               </div>
                                               <div class="col-md-3 col-sm-12 text-md-right text-sm-center text-center">
                                                   <button class="btn btn-success get_lyrics_btn">Get Lyrics</button>
