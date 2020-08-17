@@ -56,6 +56,7 @@ function callApiForSearch(nameOfArtistOrSong) {
           let albumImg = nameOfArtistOrSong.data[i].album.cover_medium;
           let albumTitle = nameOfArtistOrSong.data[i].title;
           let artistName = nameOfArtistOrSong.data[i].artist.name;
+          let proxy = `https://cors-anywhere.herokuapp.com/`;
           let songPreview = nameOfArtistOrSong.data[i].preview;
 
           lyricsApiUrl = `https://api.lyrics.ovh/v1/${artistName}/${albumTitle}`;
@@ -66,6 +67,7 @@ function callApiForSearch(nameOfArtistOrSong) {
             })
             .then((data) => {
               let lyrics = data.lyrics;
+              console.log(songPreview);
               if (lyrics !== undefined) {
                 searchResult.innerHTML += `<div class="single-result row align-items-center my-3 p-3">
                                               <div class="music_img col-md-3 col-sm-12 text-center">
@@ -75,7 +77,7 @@ function callApiForSearch(nameOfArtistOrSong) {
                                                   <h3 class="lyrics-name">${albumTitle}</h3>
                                                   <p class="author lead">Album by <span>${artistName}</span></p>
                                                   <audio controls controlsList="nodownload">
-                                                      <source src=${songPreview} type="audio/mpeg" />
+                                                      <source src=${proxy}${songPreview} type="audio/mpeg" />
                                                   </audio>
                                               </div>
                                               <div class="col-md-3 col-sm-12 text-md-right text-sm-center text-center">
