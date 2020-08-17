@@ -66,6 +66,7 @@ function callApiForSearch(nameOfArtistOrSong) {
               return data;
             })
             .then((data) => {
+              console.log(songPreview);
               let lyrics = data.lyrics;
               if (lyrics !== undefined) {
                 searchResult.innerHTML += `<div class="single-result row align-items-center my-3 p-3">
@@ -76,7 +77,7 @@ function callApiForSearch(nameOfArtistOrSong) {
                                                   <h3 class="lyrics-name">${albumTitle}</h3>
                                                   <p class="author lead">Album by <span>${artistName}</span></p>
                                                   <audio controls controlsList="nodownload">
-                                                      <source src=${songPreview} type="audio/mpeg" />
+                                                      <source src='http://cdn-preview-1.deezer.com/stream/c-1ad117a5accc2ee7138046ba4473e1b5-6.mp3' type="audio/mpeg" />
                                                   </audio>
                                               </div>
                                               <div class="col-md-3 col-sm-12 text-md-right text-sm-center text-center">
@@ -88,7 +89,6 @@ function callApiForSearch(nameOfArtistOrSong) {
                                             <pre class="text-white text-center">${lyrics}</pre>
                                           </div>`;
               } else if (lyrics === undefined) {
-                // let notifyNoLyris = document.querySelector(".single-lyrics div");
                 searchResult.innerHTML += `<div class="single-result row align-items-center my-3 p-3">
                                               <div class="music_img col-md-3 col-sm-12 text-center">
                                                   <img class="img-fluid" src=${albumImg} alt="album img" />
@@ -97,7 +97,7 @@ function callApiForSearch(nameOfArtistOrSong) {
                                                   <h3 class="lyrics-name">${albumTitle}</h3>
                                                   <p class="author lead">Album by <span>${artistName}</span></p>
                                                   <audio controls controlsList="nodownload">
-                                                      <source src=${songPreview} type="audio/mpeg" />
+                                                      <source src='http://cdn-preview-1.deezer.com/stream/c-1ad117a5accc2ee7138046ba4473e1b5-6.mp3' type="audio/mpeg" />
                                                   </audio>
                                               </div>
                                               <div class="col-md-3 col-sm-12 text-md-right text-sm-center text-center">
